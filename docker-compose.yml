@@ -10,6 +10,8 @@ services:
       - 8000:3306
     env_file:
       - .env
+    volumes:
+      - db:/var/lib/mysql/
   mysql-client:
     build: ./mysql_client/
     image: client
@@ -18,4 +20,5 @@ services:
     ports:
       - 8001:3307
 
-
+volumes:
+  db:
