@@ -10,3 +10,4 @@ RUN yum module disable mysql -y
 RUN rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 RUN yum update -y
 RUN yum install mysql-community-server -y
+

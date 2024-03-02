@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  mysql-server:
+    build: ./mysql_server/
+    image: server
+    privileged: true
+    entrypoint: ["/usr/sbin/init"]
+    ports:
+      - 8000:3306
+    env_file:
+      - .env
+  mysql-client:
+    build: ./mysql_client/
+    image: client
+    privileged: true
+    entrypoint: ["/usr/sbin/init"]
+    ports:
+      - 8001:3307
+
+
